@@ -67,7 +67,7 @@
 <span class="material-symbols-outlined text-primary text-2xl" data-icon="local_shipping">local_shipping</span>
 <h1 class="text-primary font-bold text-xl tracking-tight">القافلة الآمنة</h1>
 </div>
-<button aria-label="رجوع" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#e8f1fb] transition-colors">
+<button aria-label="رجوع" onclick="history.back()" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#e8f1fb] transition-colors">
 <span class="material-symbols-outlined text-on-surface text-2xl rotate-180" data-icon="arrow_back">arrow_back</span>
 </button>
 </header>
@@ -81,7 +81,7 @@
             </p>
 </section>
 <!-- Registration Form -->
-<form class="flex flex-col gap-5">
+<form class="flex flex-col gap-5" onsubmit="location.href='04-my-requests.html';return false;">
 <!-- Full Name -->
 <div class="flex flex-col gap-1.5">
 <label class="text-sm font-semibold mr-1">الاسم الكامل</label>
@@ -143,7 +143,7 @@
 <!-- Footer Link -->
 <footer class="flex items-center justify-center gap-1 py-4 text-sm">
 <span class="text-on-surface-variant">لديك حساب بالفعل؟</span>
-<a class="text-primary font-bold hover:underline" href="#">تسجيل الدخول</a>
+<a class="text-primary font-bold hover:underline" href="01-login.html">تسجيل الدخول</a>
 </footer>
 <!-- Decorative Asset (Subtle Background Element) -->
 <div class="mt-4 opacity-10 flex justify-center">
@@ -170,4 +170,6 @@
         btn.addEventListener('mouseup', () => btn.classList.remove('scale-95'));
         btn.addEventListener('mouseleave', () => btn.classList.remove('scale-95'));
     </script>
+
+<script src="../nav.js"></script>
 </body></html>
