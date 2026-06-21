@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>القافلة الآمنة - تنبيه بشحنة قادمة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+                primary: "#1f5aa8",
+                onPrimary: "#ffffff",
+                surface: "#f6f9fc",
+                onSurface: "#14233a",
+                surfaceVariant: "#e8f1fb",
+                outline: "#cdddee",
+                muted: "#5b6b80",
+                success: "#13a05a",
+                error: "#d64550",
+                warning: "#e8920a"
+            },
+            borderRadius: {
+                    "DEFAULT": "0.5rem",
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            fontFamily: {
+                    "headline": ["Noto Sans Arabic", "Public Sans", "sans-serif"],
+                    "body": ["Noto Sans Arabic", "Public Sans", "sans-serif"],
+                    "label": ["Noto Sans Arabic", "Public Sans", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Sans Arabic', 'Public Sans', sans-serif;
+            background-color: #f6f9fc;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .custom-shadow {
+            box-shadow: 0 4px 20px -2px rgba(31, 90, 168, 0.08);
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #1f5aa8 !important;
+            box-shadow: 0 0 0 3px rgba(31, 90, 168, 0.1);
+        }
+        .segmented-control input:checked + label {
+            background-color: #1f5aa8;
+            color: white;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-onSurface antialiased pb-24">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-white border-b border-[#cdddee] shadow-sm flex flex-row-reverse justify-between items-center px-4 py-3 w-full">
+<div class="flex items-center gap-3">
+<h1 class="font-headline text-lg font-bold text-[#1f5aa8]">تنبيه بشحنة قادمة</h1>
+</div>
+<button class="p-2 hover:bg-[#e8f1fb] rounded-full transition-colors duration-200 flex items-center justify-center" onclick="window.history.back()">
+<span class="material-symbols-outlined text-[#1f5aa8]">arrow_forward</span>
+</button>
+</header>
+<main class="max-w-md mx-auto px-4 py-6 space-y-6">
+<!-- Hero Intro -->
+<section class="text-center space-y-2">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-surfaceVariant rounded-full mb-2">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">package_2</span>
+</div>
+<p class="text-muted text-sm leading-relaxed px-4">
+                أخبرنا عن طردك القادم لنتعرّف عليه فور وصوله لمخزن الصين ونقوم بتحديث حالته لك بسرعة.
+            </p>
+</section>
+<!-- Form Content -->
+<div class="space-y-5">
+<!-- Tracking Number -->
+<div class="space-y-2">
+<label class="block text-sm font-bold text-onSurface">رقم التتبع لدى الناقل الصيني</label>
+<div class="relative">
+<input class="w-full bg-white border border-outline rounded-xl px-4 py-3 pr-11 text-sm transition-all" placeholder="أدخل رقم التتبع (Tracking Number)" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-muted">barcode_scanner</span>
+</div>
+</div>
+<!-- Store Name -->
+<div class="space-y-2">
+<label class="block text-sm font-bold text-onSurface">اسم المتجر / المورّد</label>
+<input class="w-full bg-white border border-outline rounded-xl px-4 py-3 text-sm transition-all" placeholder="مثال: Taobao, Tmall, Alibaba..." type="text"/>
+</div>
+<!-- Order Link -->
+<div class="space-y-2">
+<label class="block text-sm font-bold text-onSurface">رابط الطلب <span class="text-muted font-normal">(اختياري)</span></label>
+<input class="w-full bg-white border border-outline rounded-xl px-4 py-3 text-sm transition-all" placeholder="انسخ رابط السلعة هنا" type="url"/>
+</div>
+<!-- Shipping Type (Segmented Control) -->
+<div class="space-y-2">
+<label class="block text-sm font-bold text-onSurface">نوع الشحن المتوقّع</label>
+<div class="flex p-1 bg-white border border-outline rounded-xl gap-1 segmented-control">
+<input checked="" class="hidden" id="air" name="shipping_type" type="radio"/>
+<label class="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-bold cursor-pointer transition-all duration-200 text-muted" for="air">
+<span class="material-symbols-outlined text-xl">flight</span>
+                        جوي
+                    </label>
+<input class="hidden" id="sea" name="shipping_type" type="radio"/>
+<label class="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-bold cursor-pointer transition-all duration-200 text-muted" for="sea">
+<span class="material-symbols-outlined text-xl">directions_boat</span>
+                        بحري
+                    </label>
+</div>
+</div>
+<!-- Content Description -->
+<div class="space-y-2">
+<label class="block text-sm font-bold text-onSurface">وصف محتوى الطرد</label>
+<textarea class="w-full bg-white border border-outline rounded-xl px-4 py-3 text-sm transition-all resize-none" placeholder="أدخل محتويات الطرد (ملابس، إلكترونيات...)" rows="3"></textarea>
+</div>
+<!-- Weight & Boxes Row -->
+<div class="flex gap-4">
+<div class="flex-1 space-y-2">
+<label class="block text-sm font-bold text-onSurface">الوزن التقريبي <span class="text-xs text-muted">(كجم)</span></label>
+<input class="w-full bg-white border border-outline rounded-xl px-4 py-3 text-sm transition-all text-center" placeholder="0.0" type="number"/>
+</div>
+<div class="flex-1 space-y-2">
+<label class="block text-sm font-bold text-onSurface">عدد الصناديق</label>
+<input class="w-full bg-white border border-outline rounded-xl px-4 py-3 text-sm transition-all text-center" placeholder="1" type="number"/>
+</div>
+</div>
+<!-- Notes -->
+<div class="space-y-2">
+<label class="block text-sm font-bold text-onSurface">ملاحظات</label>
+<textarea class="w-full bg-white border border-outline rounded-xl px-4 py-3 text-sm transition-all resize-none" placeholder="أي تعليمات إضافية بخصوص الشحنة" rows="2"></textarea>
+</div>
+<!-- Upload Section -->
+<div class="space-y-2">
+<label class="block text-sm font-bold text-onSurface">إرفاق صورة الفاتورة/الطلب <span class="text-muted font-normal">(اختياري)</span></label>
+<div class="border-2 border-dashed border-outline rounded-xl p-6 bg-white flex flex-col items-center justify-center gap-2 group cursor-pointer hover:border-primary transition-colors">
+<div class="w-12 h-12 bg-surfaceVariant rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-2xl">photo_camera</span>
+</div>
+<span class="text-sm font-medium text-muted">انقر أو اسحب الصورة هنا</span>
+<span class="text-xs text-muted/60">يدعم JPG, PNG (حد أقصى 5MB)</span>
+</div>
+</div>
+<!-- Notification Card -->
+<div class="bg-surfaceVariant border border-[#cdddee] rounded-xl p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-warning" style="font-variation-settings: 'FILL' 1;">error</span>
+<div class="space-y-1">
+<p class="text-sm font-bold text-primary">تذكير هام</p>
+<p class="text-xs text-onSurface leading-relaxed">
+                        يرجى التأكد من كتابة كودك الخاص <span class="bg-primary text-white px-1.5 py-0.5 rounded-md font-mono font-bold">QF1163</span> بوضوح على غلاف الطرد لضمان عدم ضياعه.
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Action -->
+<footer class="fixed bottom-0 left-0 w-full bg-white border-t border-outline p-4 pb-8 z-40 max-w-md mx-auto right-0 flex items-center justify-center">
+<button class="w-full bg-primary text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2">
+<span>إرسال التنبيه</span>
+<span class="material-symbols-outlined text-lg">send</span>
+</button>
+</footer>
+<!-- Bottom Nav (Hidden on Focused Task Screen as per rules) -->
+<!-- The "Success/Confirmation" or "Transactional/Task" screens usually hide bottom nav -->
+<script>
+        // Micro-interactions for form
+        document.querySelectorAll('input, textarea').forEach(element => {
+            element.addEventListener('focus', () => {
+                // Potential for adding subtle vibration or sound
+            });
+        });
+
+        // Simple animation on load
+        window.addEventListener('load', () => {
+            document.body.classList.add('opacity-100');
+        });
+    </script>
+</body></html>

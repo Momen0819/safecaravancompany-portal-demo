@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تسجيل الدخول - القافلة الآمنة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&amp;family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1f5aa8",
+              surface: "#f6f9fc",
+              border: "#cdddee",
+              textMain: "#14233a",
+              textMuted: "#5b6b80",
+              lightBlue: "#e8f1fb"
+            },
+            borderRadius: {
+              "DEFAULT": "0.5rem",
+              "lg": "1rem",
+              "xl": "1.5rem",
+              "full": "9999px"
+            },
+            fontFamily: {
+              headline: ["Noto Sans Arabic", "Public Sans", "sans-serif"],
+              body: ["Noto Sans Arabic", "Public Sans", "sans-serif"],
+              label: ["Noto Sans Arabic", "Public Sans", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: 'Noto Sans Arabic', 'Public Sans', sans-serif;
+        background-color: #f6f9fc;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        vertical-align: middle;
+      }
+      .input-focus-effect:focus-within {
+        border-color: #1f5aa8;
+        box-shadow: 0 0 0 4px rgba(31, 90, 168, 0.1);
+      }
+      /* Custom Checkbox */
+      .custom-checkbox:checked {
+        background-color: #1f5aa8;
+        border-color: #1f5aa8;
+      }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+<!-- Login Container -->
+<main class="w-full max-w-[420px] bg-white rounded-xl shadow-sm border border-border p-8 md:p-10 transition-all duration-300">
+<!-- Header / Logo Section -->
+<header class="flex flex-col items-center mb-10">
+<div class="w-20 h-20 mb-4 bg-lightBlue rounded-full flex items-center justify-center p-3 overflow-hidden">
+<img alt="القافلة الآمنة Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLtkgJ_POUUgKkKM8bcwFwg7_qP2fcDMPEhgf3B6fOwB14DtrcIq_bJgASVbycTR09IyQxqNg4bIzGjMhO32iUvTRf1fjKSRtJqQy4k0lqASVViIub8NgcYOh9B9GnlZ_BMwOPCtFGys6yoCCoHT27PFk222vZ7AOpVTTalDfEGoMuQ5SIaaOzrgk_8sJ-S9w4dhpuU3oZHWEyOmIBCYn4HEJqumAV6dijceOJ8Q-Yuk3CAVjtySBRE1zw"/>
+</div>
+<h1 class="text-2xl font-extrabold text-primary tracking-tight">القافلة الآمنة</h1>
+<p class="text-textMuted text-sm font-medium mt-1">بوابة العملاء</p>
+</header>
+<!-- Welcome Text -->
+<section class="mb-8 text-right">
+<h2 class="text-xl font-bold text-textMain mb-2">تسجيل الدخول</h2>
+<p class="text-textMuted text-sm leading-relaxed">تابع شحناتك وحسابك في أي وقت عبر بوابتنا المتكاملة.</p>
+</section>
+<!-- Form -->
+<form class="space-y-5" onsubmit="return false;">
+<!-- Username/Email Field -->
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-textMain mr-1" for="identity">رقم الهاتف أو البريد الإلكتروني</label>
+<div class="relative group input-focus-effect border border-border rounded-lg transition-all duration-200 bg-white overflow-hidden flex items-center">
+<div class="px-3 flex items-center justify-center text-textMuted group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">phone_iphone</span>
+</div>
+<input class="w-full py-3 px-2 border-none focus:ring-0 text-textMain placeholder:text-textMuted/50 text-sm" id="identity" name="identity" placeholder="مثال: 091XXXXXXX" type="text"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-textMain mr-1" for="password">كلمة المرور</label>
+<div class="relative group input-focus-effect border border-border rounded-lg transition-all duration-200 bg-white overflow-hidden flex items-center">
+<div class="px-3 flex items-center justify-center text-textMuted group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">lock</span>
+</div>
+<input class="w-full py-3 px-2 border-none focus:ring-0 text-textMain placeholder:text-textMuted/50 text-sm" id="password" name="password" placeholder="••••••••" type="password"/>
+<button class="px-3 flex items-center justify-center text-textMuted hover:text-primary transition-colors" onclick="togglePasswordVisibility()" type="button">
+<span class="material-symbols-outlined text-[20px]" id="password-toggle-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Options Row -->
+<div class="flex items-center justify-between text-xs font-medium pt-1">
+<label class="flex items-center gap-2 cursor-pointer text-textMuted select-none">
+<input class="custom-checkbox w-4 h-4 rounded border-border text-primary focus:ring-primary/20 transition-all" type="checkbox"/>
+<span>تذكرني</span>
+</label>
+<a class="text-primary hover:underline decoration-2 underline-offset-4" href="#">نسيت كلمة المرور؟</a>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary hover:bg-[#17488a] active:scale-[0.98] text-white font-bold py-4 rounded-lg shadow-md transition-all duration-200 mt-4 flex items-center justify-center gap-2" type="submit">
+<span>دخول</span>
+<span class="material-symbols-outlined">login</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="relative my-8 text-center">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-border"></div>
+</div>
+<span class="relative px-4 bg-white text-textMuted text-xs font-medium">أو</span>
+</div>
+<!-- Footer Footer -->
+<footer class="text-center">
+<p class="text-textMuted text-sm font-medium">
+                ليس لديك حساب؟
+                <a class="text-primary font-bold hover:underline decoration-2 underline-offset-4 mr-1" href="#">سجّل الآن</a>
+</p>
+</footer>
+</main>
+<!-- Decorative Elements (Subtle background patterns) -->
+<div class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none opacity-40">
+<div class="absolute top-[10%] right-[10%] w-64 h-64 bg-lightBlue rounded-full blur-3xl"></div>
+<div class="absolute bottom-[10%] left-[10%] w-80 h-80 bg-lightBlue rounded-full blur-3xl opacity-60"></div>
+</div>
+<script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const icon = document.getElementById('password-toggle-icon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.textContent = 'visibility_off';
+            } else {
+                passwordInput.type = 'password';
+                icon.textContent = 'visibility';
+            }
+        }
+
+        // Add visual micro-interaction for button
+        const btn = document.querySelector('button[type="submit"]');
+        btn.addEventListener('click', function(e) {
+            if(!this.classList.contains('loading')) {
+                // Just a mock loading state visual
+                const originalContent = this.innerHTML;
+                this.innerHTML = `<span class="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>`;
+                this.disabled = true;
+                this.classList.add('opacity-80', 'cursor-not-allowed');
+                
+                setTimeout(() => {
+                    this.innerHTML = originalContent;
+                    this.disabled = false;
+                    this.classList.remove('opacity-80', 'cursor-not-allowed');
+                }, 1500);
+            }
+        });
+    </script>
+</body></html>

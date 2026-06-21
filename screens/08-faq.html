@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>القافلة الآمنة - المساعدة والأسئلة الشائعة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&amp;family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1f5aa8",
+                        brandDark: "#14233a",
+                        brandMuted: "#5b6b80",
+                        brandBorder: "#cdddee",
+                        brandBg: "#f6f9fc",
+                        brandLight: "#e8f1fb"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        headline: ["Noto Sans Arabic", "Public Sans", "sans-serif"],
+                        body: ["Noto Sans Arabic", "Public Sans", "sans-serif"],
+                        label: ["Noto Sans Arabic", "Public Sans", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            background-color: #f6f9fc;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 200px;
+            padding-top: 1rem;
+        }
+        .accordion-item.active .chevron-icon {
+            transform: rotate(180deg);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-brandDark pb-24">
+<!-- TopAppBar -->
+<header class="bg-[#1f5aa8] shadow-md fixed top-0 w-full z-50 h-16 flex flex-row-reverse justify-between items-center px-4">
+<div class="flex items-center gap-3">
+<span class="text-white font-headline text-lg font-bold">المساعدة والأسئلة الشائعة</span>
+</div>
+<button class="text-white hover:bg-[#14233a] transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</header>
+<main class="pt-20 px-4 max-w-2xl mx-auto">
+<!-- Search Section -->
+<section class="mt-4">
+<div class="relative group">
+<div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-brandMuted group-focus-within:text-primary transition-colors" data-icon="search">search</span>
+</div>
+<input class="w-full bg-white border-brandBorder border rounded-xl py-4 pr-12 pl-4 focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm outline-none text-brandDark placeholder-brandMuted" placeholder="ابحث عن سؤال..." type="text"/>
+</div>
+</section>
+<!-- Category Tabs -->
+<section class="mt-6 -mx-4">
+<div class="flex overflow-x-auto hide-scrollbar px-4 gap-3 no-wrap">
+<button class="whitespace-nowrap bg-primary text-white px-5 py-2.5 rounded-full font-bold shadow-md transition-transform active:scale-95">
+                    الشحن والتتبع
+                </button>
+<button class="whitespace-nowrap bg-white border border-brandBorder text-brandMuted px-5 py-2.5 rounded-full hover:bg-brandLight transition-colors">
+                    الرسوم والدفع
+                </button>
+<button class="whitespace-nowrap bg-white border border-brandBorder text-brandMuted px-5 py-2.5 rounded-full hover:bg-brandLight transition-colors">
+                    الاستلام
+                </button>
+<button class="whitespace-nowrap bg-white border border-brandBorder text-brandMuted px-5 py-2.5 rounded-full hover:bg-brandLight transition-colors">
+                    الحساب
+                </button>
+</div>
+</section>
+<!-- FAQ Accordion -->
+<section class="mt-8 space-y-3">
+<!-- Question 1 (Open by Default) -->
+<div class="accordion-item active bg-white border border-brandBorder rounded-xl p-4 shadow-sm" id="q1">
+<button class="w-full flex items-center justify-between text-right" onclick="toggleAccordion('q1')">
+<span class="font-bold text-brandDark">كيف أتتبع شحنتي؟</span>
+<span class="material-symbols-outlined chevron-icon transition-transform text-primary" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="text-brandMuted text-sm leading-relaxed border-t border-brandLight pt-3">
+                        يمكنك تتبع شحنتك من خلال قسم 'شحناتي' في التطبيق باستخدام رقم التتبع الخاص بك. ستتلقى إشعارات فورية بكل تحديث يطرأ على حالة الشحنة.
+                    </p>
+</div>
+</div>
+<!-- Question 2 -->
+<div class="accordion-item bg-white border border-brandBorder rounded-xl p-4 shadow-sm" id="q2">
+<button class="w-full flex items-center justify-between text-right" onclick="toggleAccordion('q2')">
+<span class="font-bold text-brandDark">ما عنوان مخزن الصين الذي أشحن إليه؟</span>
+<span class="material-symbols-outlined chevron-icon transition-transform text-primary" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="text-brandMuted text-sm leading-relaxed border-t border-brandLight pt-3">
+                        عنوان المستودع متاح في صفحة حسابك الشخصي. يرجى التأكد من إضافة كود العميل الخاص بك (QF####) لضمان وصول الشحنة لحسابك بشكل صحيح.
+                    </p>
+</div>
+</div>
+<!-- Question 3 -->
+<div class="accordion-item bg-white border border-brandBorder rounded-xl p-4 shadow-sm" id="q3">
+<button class="w-full flex items-center justify-between text-right" onclick="toggleAccordion('q3')">
+<span class="font-bold text-brandDark">كيف أعرف تكلفة الشحن؟</span>
+<span class="material-symbols-outlined chevron-icon transition-transform text-primary" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="text-brandMuted text-sm leading-relaxed border-t border-brandLight pt-3">
+                        يتم حساب تكلفة الشحن بناءً على الوزن الفعلي أو الحجمي (أيهما أكبر). يمكنك استخدام الحاسبة المتوفرة في التطبيق للحصول على تقدير تقريبي.
+                    </p>
+</div>
+</div>
+<!-- Question 4 -->
+<div class="accordion-item bg-white border border-brandBorder rounded-xl p-4 shadow-sm" id="q4">
+<button class="w-full flex items-center justify-between text-right" onclick="toggleAccordion('q4')">
+<span class="font-bold text-brandDark">متى أستلم شحنتي بعد وصولها؟</span>
+<span class="material-symbols-outlined chevron-icon transition-transform text-primary" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="text-brandMuted text-sm leading-relaxed border-t border-brandLight pt-3">
+                        تستغرق عملية التخليص الجمركي والفرز عادةً من 24 إلى 48 ساعة بعد وصول الطائرة/السفينة. ستصلك رسالة "جاهزة للاستلام" فور انتهاء المعالجة.
+                    </p>
+</div>
+</div>
+<!-- Question 5 -->
+<div class="accordion-item bg-white border border-brandBorder rounded-xl p-4 shadow-sm" id="q5">
+<button class="w-full flex items-center justify-between text-right" onclick="toggleAccordion('q5')">
+<span class="font-bold text-brandDark">ما المواد الممنوع شحنها؟</span>
+<span class="material-symbols-outlined chevron-icon transition-transform text-primary" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="text-brandMuted text-sm leading-relaxed border-t border-brandLight pt-3">
+                        يُمنع شحن المواد القابلة للاشتعال، السوائل بجميع أنواعها، الأسلحة، والمواد المحظورة قانوناً. يرجى مراجعة القائمة التفصيلية في "شروط الخدمة".
+                    </p>
+</div>
+</div>
+</section>
+<!-- Contact Support Card -->
+<section class="mt-10 mb-8">
+<div class="bg-brandLight border border-brandBorder rounded-2xl p-6 text-center space-y-4">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="support_agent">support_agent</span>
+</div>
+<div>
+<h3 class="text-brandDark font-bold text-lg">لم تجد إجابتك؟</h3>
+<p class="text-brandMuted text-sm">فريق الدعم الفني متواجد لمساعدتك في أي وقت.</p>
+</div>
+<button class="w-full bg-primary text-white font-bold py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-[0.98]">
+                    تواصل مع الدعم
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 w-full bg-white dark:bg-[#14233a] flex flex-row-reverse justify-around items-center px-2 py-2 border-t border-[#cdddee] dark:border-[#5b6b80] shadow-[0_-2px_10px_rgba(0,0,0,0.05)] z-50">
+<button class="flex flex-col items-center justify-center text-[#5b6b80] dark:text-[#cdddee] py-1 px-3 hover:bg-[#f6f9fc] dark:hover:bg-[#1f5aa8]/20 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label text-xs mt-1">الرئيسية</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#5b6b80] dark:text-[#cdddee] py-1 px-3 hover:bg-[#f6f9fc] dark:hover:bg-[#1f5aa8]/20 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="package_2">package_2</span>
+<span class="font-label text-xs mt-1">شحناتي</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#5b6b80] dark:text-[#cdddee] py-1 px-3 hover:bg-[#f6f9fc] dark:hover:bg-[#1f5aa8]/20 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label text-xs mt-1">المحفظة</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#5b6b80] dark:text-[#cdddee] py-1 px-3 hover:bg-[#f6f9fc] dark:hover:bg-[#1f5aa8]/20 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-label text-xs mt-1">الإشعارات</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#1f5aa8] dark:text-white font-bold bg-[#e8f1fb] dark:bg-[#1f5aa8] rounded-xl py-1 px-3 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label text-xs mt-1">حسابي</span>
+</button>
+</nav>
+<script>
+        function toggleAccordion(id) {
+            const items = document.querySelectorAll('.accordion-item');
+            const clickedItem = document.getElementById(id);
+            
+            items.forEach(item => {
+                if (item !== clickedItem) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            clickedItem.classList.toggle('active');
+        }
+
+        // Search highlight interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const questions = document.querySelectorAll('.accordion-item');
+            
+            questions.forEach(q => {
+                const text = q.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    q.style.display = 'block';
+                } else {
+                    q.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body></html>

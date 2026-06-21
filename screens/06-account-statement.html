@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>كشف الحساب - القافلة الآمنة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&amp;family=Public+Sans:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1f5aa8",
+                        "primary-light": "#e8f1fb",
+                        "text-dark": "#14233a",
+                        "text-muted": "#5b6b80",
+                        "border-light": "#cdddee",
+                        "bg-main": "#f6f9fc",
+                        success: "#13a05a",
+                        danger: "#d64550",
+                        warning: "#e8920a"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        headline: ["Noto Sans Arabic", "Public Sans", "sans-serif"],
+                        body: ["Noto Sans Arabic", "Public Sans", "sans-serif"],
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Sans Arabic', 'Public Sans', sans-serif;
+            background-color: #f6f9fc;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cdddee;
+            border-radius: 10px;
+        }
+        .active-tab {
+            background-color: #e8f1fb;
+            color: #1f5aa8;
+            border-radius: 0.75rem;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-bg-main text-text-dark pb-24">
+<!-- Top App Bar -->
+<header class="bg-[#1f5aa8] text-white shadow-md sticky top-0 z-50 flex justify-between items-center w-full px-4 h-16 flex-row-reverse">
+<div class="flex items-center gap-2">
+<span class="text-white/80 text-sm font-body">QF8822</span>
+<div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">account_balance_wallet</span>
+</div>
+</div>
+<h1 class="text-lg font-bold">كشف الحساب</h1>
+<button class="w-10 h-10 flex items-center justify-center transition-colors duration-200 active:scale-95 hover:bg-white/10 rounded-full">
+<span class="material-symbols-outlined text-white">arrow_forward</span>
+</button>
+</header>
+<main class="p-4 max-w-md mx-auto space-y-6">
+<!-- Filters Section -->
+<section class="bg-white rounded-xl p-4 border border-border-light shadow-sm space-y-4">
+<div class="flex items-center justify-between mb-2">
+<h2 class="text-sm font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">filter_alt</span>
+                    تصفية النتائج
+                </h2>
+<div class="flex bg-primary-light rounded-lg p-1">
+<button class="px-3 py-1 text-xs font-bold bg-primary text-white rounded-md shadow-sm">USD</button>
+<button class="px-3 py-1 text-xs font-medium text-text-muted hover:text-primary">LYD</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="space-y-1">
+<label class="text-xs text-text-muted px-1">من تاريخ</label>
+<div class="relative">
+<input class="w-full text-xs border-border-light rounded-lg focus:ring-primary focus:border-primary pr-2 py-2" type="date" value="2023-06-01"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-xs text-text-muted px-1">إلى تاريخ</label>
+<div class="relative">
+<input class="w-full text-xs border-border-light rounded-lg focus:ring-primary focus:border-primary pr-2 py-2" type="date" value="2023-06-30"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Summary Cards -->
+<section class="grid grid-cols-2 gap-4">
+<div class="bg-white border border-border-light p-4 rounded-xl shadow-sm text-center">
+<p class="text-xs text-text-muted mb-1">إجمالي مدين</p>
+<p class="text-xl font-bold text-danger">2,150$</p>
+<div class="mt-2 h-1 w-12 bg-danger/20 mx-auto rounded-full"></div>
+</div>
+<div class="bg-white border border-border-light p-4 rounded-xl shadow-sm text-center">
+<p class="text-xs text-text-muted mb-1">إجمالي دائن</p>
+<p class="text-xl font-bold text-success">3,400$</p>
+<div class="mt-2 h-1 w-12 bg-success/20 mx-auto rounded-full"></div>
+</div>
+</section>
+<!-- Financial Table Container -->
+<section class="bg-white rounded-xl border border-border-light shadow-sm overflow-hidden">
+<div class="bg-primary px-4 py-3 flex justify-between items-center">
+<h3 class="text-white font-bold text-sm">حركة الحساب التفصيلية</h3>
+<span class="material-symbols-outlined text-white text-lg">receipt_long</span>
+</div>
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-right border-collapse min-w-[500px]">
+<thead>
+<tr class="bg-primary text-white text-[10px] uppercase tracking-wider border-t border-white/10">
+<th class="px-3 py-3 font-bold">التاريخ</th>
+<th class="px-3 py-3 font-bold">البيان</th>
+<th class="px-3 py-3 font-bold text-center">مدين</th>
+<th class="px-3 py-3 font-bold text-center">دائن</th>
+<th class="px-3 py-3 font-bold text-center">الرصيد</th>
+</tr>
+</thead>
+<tbody class="text-xs">
+<tr class="bg-white hover:bg-primary-light/30 transition-colors">
+<td class="px-3 py-4 text-text-muted">01/06</td>
+<td class="px-3 py-4 font-medium">دفعة نقدية (DEP-1201)</td>
+<td class="px-3 py-4 text-center text-text-muted">—</td>
+<td class="px-3 py-4 text-center font-bold text-success">1,000</td>
+<td class="px-3 py-4 text-center font-bold">1,000</td>
+</tr>
+<tr class="bg-primary-light/20 hover:bg-primary-light/30 transition-colors">
+<td class="px-3 py-4 text-text-muted">03/06</td>
+<td class="px-3 py-4 font-medium">شحنة جوية SH-0457 (SHIP)</td>
+<td class="px-3 py-4 text-center font-bold text-danger">85</td>
+<td class="px-3 py-4 text-center text-text-muted">—</td>
+<td class="px-3 py-4 text-center font-bold text-primary">915</td>
+</tr>
+<tr class="bg-white hover:bg-primary-light/30 transition-colors">
+<td class="px-3 py-4 text-text-muted">05/06</td>
+<td class="px-3 py-4 font-medium">حوالة (TRF-330)</td>
+<td class="px-3 py-4 text-center font-bold text-danger">350</td>
+<td class="px-3 py-4 text-center text-text-muted">—</td>
+<td class="px-3 py-4 text-center font-bold text-primary">565</td>
+</tr>
+<tr class="bg-primary-light/20 hover:bg-primary-light/30 transition-colors">
+<td class="px-3 py-4 text-text-muted">07/06</td>
+<td class="px-3 py-4 font-medium">خدمة تغليف (SRV-12)</td>
+<td class="px-3 py-4 text-center font-bold text-danger">100</td>
+<td class="px-3 py-4 text-center text-text-muted">—</td>
+<td class="px-3 py-4 text-center font-bold text-primary">465</td>
+</tr>
+<tr class="bg-white hover:bg-primary-light/30 transition-colors">
+<td class="px-3 py-4 text-text-muted">09/06</td>
+<td class="px-3 py-4 font-medium">مصروف جمارك (EXP-88)</td>
+<td class="px-3 py-4 text-center font-bold text-danger">200</td>
+<td class="px-3 py-4 text-center text-text-muted">—</td>
+<td class="px-3 py-4 text-center font-bold text-primary">265</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Footer Total Row -->
+<div class="bg-primary-light border-t border-border-light p-4 flex justify-between items-center">
+<span class="text-sm font-bold text-text-dark">الرصيد النهائي:</span>
+<span class="text-base font-bold text-success">1,250.00 $ — لك</span>
+</div>
+</section>
+<!-- Actions -->
+<section class="space-y-3 pt-2">
+<button class="w-full bg-primary text-white font-bold py-4 rounded-xl flex items-center justify-center gap-3 shadow-lg shadow-primary/20 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+                تحميل الكشف PDF
+            </button>
+<button class="w-full bg-white border-2 border-primary text-primary font-bold py-3.5 rounded-xl flex items-center justify-center gap-3 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">description</span>
+                تصدير Excel
+            </button>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 right-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-white shadow-[0_-2px_10px_rgba(0,0,0,0.05)] border-t border-border-light flex-row-reverse rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-text-muted px-3 py-1 hover:text-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-xs font-medium mt-1">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center text-text-muted px-3 py-1 hover:text-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined">package_2</span>
+<span class="text-xs font-medium mt-1">شحناتي</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-primary-light rounded-xl px-3 py-1 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="text-xs font-bold mt-1">المحفظة</span>
+</a>
+<a class="flex flex-col items-center justify-center text-text-muted px-3 py-1 hover:text-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-xs font-medium mt-1">الإشعارات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-text-muted px-3 py-1 hover:text-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-xs font-medium mt-1">حسابي</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for feedback
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                let ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+    </script>
+</body></html>
