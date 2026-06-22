@@ -3,143 +3,28 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>القافلة الآمنة — بوابة العملاء (نموذج تفاعلي)</title>
-<meta name="description" content="نموذج تفاعلي لبوابة عملاء شركة القافلة الآمنة للشحن من الصين إلى ليبيا — MVP." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<meta http-equiv="refresh" content="0; url=screens/01-login.html" />
+<title>القافلة الآمنة — بوابة العملاء</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700;800&display=swap" rel="stylesheet" />
 <style>
-  :root{
-    --primary:#1f5aa8; --primary-d:#16447f; --light:#e8f1fb; --ink:#14233a;
-    --muted:#5b6b80; --border:#cdddee; --bg:#f6f9fc; --green:#13a05a;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'Noto Sans Arabic',sans-serif;background:var(--bg);color:var(--ink);
-    -webkit-font-smoothing:antialiased;line-height:1.6}
-  a{text-decoration:none;color:inherit}
-
-  /* Header */
-  header{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-d) 100%);color:#fff;
-    padding:48px 20px 56px;position:relative;overflow:hidden}
-  header::after{content:"";position:absolute;inset:0;
-    background:radial-gradient(circle at 85% 15%,rgba(255,255,255,.12),transparent 40%);pointer-events:none}
-  .wrap{max-width:1180px;margin:0 auto;position:relative;z-index:1}
-  .brand{display:flex;align-items:center;gap:14px;margin-bottom:22px}
-  .logo{width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.16);
-    display:grid;place-items:center;font-size:26px;border:1px solid rgba(255,255,255,.25)}
-  .brand h1{font-size:26px;font-weight:800;letter-spacing:-.3px}
-  .brand p{font-size:13px;opacity:.85;font-weight:500}
-  .hero h2{font-size:34px;font-weight:800;line-height:1.25;max-width:780px;margin-bottom:14px}
-  .hero .lead{font-size:16px;opacity:.92;max-width:680px;font-weight:400}
-  .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-  .badge{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);
-    padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600}
-
-  /* Section */
-  main{max-width:1180px;margin:0 auto;padding:44px 20px 80px}
-  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:8px}
-  .sec-head h3{font-size:21px;font-weight:800}
-  .sec-head span{color:var(--muted);font-size:14px;font-weight:600}
-  .note{color:var(--muted);font-size:14px;margin-bottom:30px;
-    background:var(--light);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
-
-  /* Grid of phones */
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:34px 24px}
-  .card{display:flex;flex-direction:column;align-items:center;gap:16px}
-  .phone-wrap{position:relative;width:300px;height:600px;border-radius:38px;
-    background:#0d1b2e;padding:11px;box-shadow:0 18px 40px -18px rgba(20,35,58,.45),0 4px 12px rgba(20,35,58,.12);
-    transition:transform .25s ease, box-shadow .25s ease}
-  .card:hover .phone-wrap{transform:translateY(-6px);box-shadow:0 28px 56px -20px rgba(20,35,58,.55)}
-  .notch{position:absolute;top:11px;left:50%;transform:translateX(-50%);
-    width:120px;height:24px;background:#0d1b2e;border-radius:0 0 16px 16px;z-index:3}
-  .screen{position:relative;width:100%;height:100%;border-radius:28px;overflow:hidden;background:#fff}
-  .screen iframe{position:absolute;top:0;left:0;width:393px;height:786px;border:0;
-    transform:scale(.7073);transform-origin:top left}
-  .screen .hit{position:absolute;inset:0;z-index:4;cursor:pointer}
-  .num{position:absolute;top:18px;right:18px;z-index:5;width:30px;height:30px;border-radius:50%;
-    background:var(--primary);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700;
-    box-shadow:0 2px 8px rgba(31,90,168,.4)}
-  .cap{text-align:center}
-  .cap h4{font-size:16px;font-weight:700;margin-bottom:3px}
-  .cap a{font-size:13px;color:var(--primary);font-weight:600}
-  .cap a:hover{text-decoration:underline}
-
-  footer{background:#0d1b2e;color:#c7d3e2;text-align:center;padding:30px 20px;font-size:13px}
-  footer strong{color:#fff}
-  @media(max-width:560px){
-    header{padding:36px 16px 44px}.hero h2{font-size:26px}.brand h1{font-size:22px}
-    .grid{gap:28px 16px}
-  }
+  html,body{height:100%;margin:0}
+  body{font-family:'Noto Sans Arabic',sans-serif;background:linear-gradient(135deg,#1f5aa8,#16447f);
+    color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}
+  .logo{width:84px;height:84px;border-radius:22px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-size:42px}
+  h1{font-size:26px;font-weight:800;margin:0}
+  p{opacity:.85;font-size:14px;margin:0}
+  .spin{width:26px;height:26px;border:3px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:s .8s linear infinite;margin-top:6px}
+  @keyframes s{to{transform:rotate(360deg)}}
+  a{color:#fff}
 </style>
+<script>location.replace('screens/01-login.html');</script>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <div class="brand">
-      <div class="logo">✈️</div>
-      <div>
-        <h1>القافلة الآمنة</h1>
-        <p>Safe Caravan Company</p>
-      </div>
-    </div>
-    <div class="hero">
-      <h2>بوابة العملاء — نموذج تفاعلي</h2>
-      <p class="lead">واجهات تطبيق العميل لمتابعة الشحنات من الصين إلى ليبيا: تتبّع، محفظة وكشوف حساب،
-        عنوان مخزن الصين، والتنبيه بالشحنات القادمة. تصميم عربي RTL للموبايل.</p>
-      <div class="badges">
-        <span class="badge">📱 موبايل · عربي RTL</span>
-        <span class="badge">🎨 هوية القافلة الآمنة</span>
-        <span class="badge">⚙️ مرحلة MVP</span>
-        <span class="badge">🧩 نموذج للعرض فقط</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<main>
-  <div class="sec-head">
-    <h3>الشاشات</h3>
-    <span>اضغط أي شاشة لفتحها بالحجم الكامل</span>
-  </div>
-  <div class="note">
-    🔹 هذا نموذج تصميمي تفاعلي (Prototype) للعرض على العميل — الأزرار والحقول للتوضيح البصري ولا تنفّذ عمليات فعلية.
-  </div>
-
-  <div class="grid" id="grid"></div>
-</main>
-
-<footer>
-  <p><strong>القافلة الآمنة</strong> — بوابة العملاء (MVP) · نموذج تصميمي تفاعلي</p>
-</footer>
-
-<script>
-  const screens = [
-    {n:1, t:"تسجيل الدخول",        f:"screens/01-login.html"},
-    {n:2, t:"إنشاء حساب جديد",      f:"screens/02-register.html"},
-    {n:3, t:"تنبيه بشحنة قادمة",    f:"screens/03-pre-alert.html"},
-    {n:4, t:"طلباتي وتنبيهاتي",     f:"screens/04-my-requests.html"},
-    {n:5, t:"مدفوعاتي وإيصالاتي",   f:"screens/05-wallet-payments.html"},
-    {n:6, t:"كشف الحساب الشامل",    f:"screens/06-account-statement.html"},
-    {n:7, t:"الأمان وكلمة المرور",  f:"screens/07-security.html"},
-    {n:8, t:"الأسئلة الشائعة",      f:"screens/08-faq.html"},
-  ];
-  const grid = document.getElementById('grid');
-  grid.innerHTML = screens.map(s => `
-    <div class="card">
-      <div class="phone-wrap">
-        <div class="notch"></div>
-        <span class="num">${s.n}</span>
-        <div class="screen">
-          <iframe src="${s.f}" loading="lazy" title="${s.t}" scrolling="no"></iframe>
-          <a class="hit" href="${s.f}" target="_blank" rel="noopener" aria-label="فتح ${s.t}"></a>
-        </div>
-      </div>
-      <div class="cap">
-        <h4>${s.t}</h4>
-        <a href="${s.f}" target="_blank" rel="noopener">فتح بالحجم الكامل ↗</a>
-      </div>
-    </div>
-  `).join('');
-</script>
+  <div class="logo">✈️</div>
+  <h1>القافلة الآمنة</h1>
+  <p>جارٍ فتح بوابة العملاء…</p>
+  <div class="spin"></div>
+  <noscript><p><a href="screens/01-login.html">اضغط هنا للدخول</a></p></noscript>
 </body>
 </html>

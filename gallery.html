@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>القافلة الآمنة — كل الشاشات</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{--primary:#1f5aa8;--primary-d:#16447f;--light:#e8f1fb;--ink:#14233a;--muted:#5b6b80;--border:#cdddee;--bg:#f6f9fc}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Noto Sans Arabic',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  a{text-decoration:none;color:inherit}
+  header{background:linear-gradient(135deg,var(--primary),var(--primary-d));color:#fff;padding:40px 20px 48px}
+  .wrap{max-width:1180px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .logo{width:50px;height:50px;border-radius:14px;background:rgba(255,255,255,.16);display:grid;place-items:center;font-size:24px;border:1px solid rgba(255,255,255,.25)}
+  .brand h1{font-size:24px;font-weight:800}.brand p{font-size:13px;opacity:.85}
+  header h2{font-size:28px;font-weight:800;margin-bottom:8px}
+  header .lead{opacity:.9;font-size:15px;max-width:680px}
+  .start{display:inline-block;margin-top:18px;background:#fff;color:var(--primary);font-weight:800;padding:11px 22px;border-radius:999px}
+  main{max-width:1180px;margin:0 auto;padding:40px 20px 80px}
+  .sec{display:flex;align-items:baseline;gap:10px;margin-bottom:24px}
+  .sec h3{font-size:20px;font-weight:800}.sec span{color:var(--muted);font-size:14px;font-weight:600}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:34px 24px}
+  .card{display:flex;flex-direction:column;align-items:center;gap:16px}
+  .phone{position:relative;width:300px;height:600px;border-radius:38px;background:#0d1b2e;padding:11px;
+    box-shadow:0 18px 40px -18px rgba(20,35,58,.45);transition:transform .25s}
+  .card:hover .phone{transform:translateY(-6px)}
+  .notch{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:120px;height:24px;background:#0d1b2e;border-radius:0 0 16px 16px;z-index:3}
+  .screen{position:relative;width:100%;height:100%;border-radius:28px;overflow:hidden;background:#fff}
+  .screen iframe{position:absolute;top:0;left:0;width:393px;height:786px;border:0;transform:scale(.7073);transform-origin:top left}
+  .screen .hit{position:absolute;inset:0;z-index:4;cursor:pointer}
+  .num{position:absolute;top:18px;right:18px;z-index:5;width:30px;height:30px;border-radius:50%;background:var(--primary);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+  .cap{text-align:center}.cap h4{font-size:16px;font-weight:700}.cap a{font-size:13px;color:var(--primary);font-weight:600}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="brand"><div class="logo">✈️</div><div><h1>القافلة الآمنة</h1><p>بوابة العملاء — كل الشاشات</p></div></div>
+  <h2>كل شاشات النموذج (POC)</h2>
+  <p class="lead">اضغط أي شاشة لفتحها كاملة وتجربتها كأنها أبليكيشن حقيقي. أو ابدأ من تسجيل الدخول.</p>
+  <a class="start" href="screens/01-login.html">▶ ابدأ التجربة من تسجيل الدخول</a>
+</div></header>
+<main>
+  <div class="sec"><h3>الشاشات</h3><span>اضغط أي شاشة لفتحها</span></div>
+  <div class="grid" id="grid"></div>
+</main>
+<script>
+  var screens=[
+    {n:1,t:"تسجيل الدخول",f:"screens/01-login.html"},
+    {n:2,t:"إنشاء حساب جديد",f:"screens/02-register.html"},
+    {n:3,t:"تنبيه بشحنة قادمة",f:"screens/03-pre-alert.html"},
+    {n:4,t:"طلباتي وتنبيهاتي",f:"screens/04-my-requests.html"},
+    {n:5,t:"مدفوعاتي وإيصالاتي",f:"screens/05-wallet-payments.html"},
+    {n:6,t:"كشف الحساب الشامل",f:"screens/06-account-statement.html"},
+    {n:7,t:"الأمان وكلمة المرور",f:"screens/07-security.html"},
+    {n:8,t:"الأسئلة الشائعة",f:"screens/08-faq.html"}
+  ];
+  document.getElementById('grid').innerHTML=screens.map(function(s){return ''
+    +'<div class="card"><div class="phone"><div class="notch"></div><span class="num">'+s.n+'</span>'
+    +'<div class="screen"><iframe src="'+s.f+'" loading="lazy" title="'+s.t+'" scrolling="no"></iframe>'
+    +'<a class="hit" href="'+s.f+'" aria-label="'+s.t+'"></a></div></div>'
+    +'<div class="cap"><h4>'+s.t+'</h4><a href="'+s.f+'">فتح ↗</a></div></div>';}).join('');
+</script>
+</body>
+</html>
