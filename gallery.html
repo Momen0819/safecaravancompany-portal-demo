@@ -49,12 +49,22 @@
   var screens=[
     {n:1,t:"تسجيل الدخول",f:"screens/01-login.html"},
     {n:2,t:"إنشاء حساب جديد",f:"screens/02-register.html"},
-    {n:3,t:"تنبيه بشحنة قادمة",f:"screens/03-pre-alert.html"},
-    {n:4,t:"طلباتي وتنبيهاتي",f:"screens/04-my-requests.html"},
-    {n:5,t:"مدفوعاتي وإيصالاتي",f:"screens/05-wallet-payments.html"},
-    {n:6,t:"كشف الحساب الشامل",f:"screens/06-account-statement.html"},
-    {n:7,t:"الأمان وكلمة المرور",f:"screens/07-security.html"},
-    {n:8,t:"الأسئلة الشائعة",f:"screens/08-faq.html"}
+    {n:3,t:"الإعداد الأول",f:"screens/15-onboarding.html"},
+    {n:4,t:"ربط الحساب",f:"screens/14-link-account.html"},
+    {n:5,t:"الرئيسية / لوحتي",f:"screens/09-dashboard.html"},
+    {n:6,t:"شحناتي",f:"screens/10-shipments.html"},
+    {n:7,t:"تفاصيل وتتبع الشحنة",f:"screens/11-shipment-detail.html"},
+    {n:8,t:"عنوان مخزن الصين",f:"screens/12-china-address.html"},
+    {n:9,t:"تنبيه بشحنة قادمة",f:"screens/03-pre-alert.html"},
+    {n:10,t:"طلباتي وتنبيهاتي",f:"screens/04-my-requests.html"},
+    {n:11,t:"محفظتي",f:"screens/13-wallet.html"},
+    {n:12,t:"مدفوعاتي وإيصالاتي",f:"screens/05-wallet-payments.html"},
+    {n:13,t:"المصروفات المخصومة",f:"screens/16-charges.html"},
+    {n:14,t:"كشف الحساب الشامل",f:"screens/06-account-statement.html"},
+    {n:15,t:"حسابي",f:"screens/17-profile.html"},
+    {n:16,t:"الأمان وكلمة المرور",f:"screens/07-security.html"},
+    {n:17,t:"تواصل والدعم",f:"screens/18-contact.html"},
+    {n:18,t:"الأسئلة الشائعة",f:"screens/08-faq.html"}
   ];
   document.getElementById('grid').innerHTML=screens.map(function(s){return ''
     +'<div class="card"><div class="phone"><div class="notch"></div><span class="num">'+s.n+'</span>'

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>الرئيسية - القافلة الآمنة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet" />
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { primary:'#1f5aa8', primaryd:'#16447f', light:'#e8f1fb', ink:'#14233a', muted:'#5b6b80', border:'#cdddee', surface:'#f6f9fc', ok:'#13a05a', danger:'#d64550', warn:'#e8920a' },
+    borderRadius: { xl:'1rem', '2xl':'1.25rem' },
+    fontFamily: { sans:['Noto Sans Arabic','sans-serif'] }
+  }}};
+</script>
+<style>
+  body{font-family:'Noto Sans Arabic',sans-serif;background:#f6f9fc;color:#14233a}
+  .material-symbols-outlined{vertical-align:middle}
+  .nav-a{color:#5b6b80}.nav-a.active{color:#1f5aa8}
+</style>
+</head>
+<body class="pb-24">
+<!-- header -->
+<header class="bg-white border-b border-border px-4 py-3 flex items-center justify-between sticky top-0 z-30">
+  <div>
+    <p class="text-ink font-bold text-lg leading-tight">أهلاً، أحمد محمد 👋</p>
+    <span class="inline-block mt-1 text-xs bg-light text-primary font-semibold px-2 py-0.5 rounded-full">كود العميل: QF1163</span>
+  </div>
+  <a href="04-my-requests.html" class="relative w-10 h-10 grid place-items-center rounded-full hover:bg-light">
+    <span class="material-symbols-outlined text-ink">notifications</span>
+    <span class="absolute top-1.5 left-2 w-2.5 h-2.5 bg-danger rounded-full border-2 border-white"></span>
+  </a>
+</header>
+
+<main class="p-4 space-y-5">
+  <!-- balance card -->
+  <section class="rounded-2xl p-5 text-white shadow-lg" style="background:linear-gradient(135deg,#1f5aa8,#16447f)">
+    <p class="text-white/80 text-sm">رصيدك الحالي</p>
+    <div class="flex items-end gap-2 mt-1">
+      <span class="text-4xl font-extrabold">1,250.00 $</span>
+      <span class="mb-1 text-xs bg-ok/90 px-2 py-0.5 rounded-full font-bold">لك</span>
+    </div>
+    <p class="text-white/70 text-xs mt-1">إجمالي المدفوع مقابل المستحقات</p>
+    <div class="flex gap-2 mt-4">
+      <a href="06-account-statement.html" class="flex-1 text-center bg-white/15 hover:bg-white/25 rounded-xl py-2.5 text-sm font-bold">كشف الحساب</a>
+      <a href="13-wallet.html" class="flex-1 text-center bg-white text-primary rounded-xl py-2.5 text-sm font-bold">المحفظة</a>
+    </div>
+  </section>
+
+  <!-- counters -->
+  <section class="grid grid-cols-3 gap-3">
+    <a href="10-shipments.html" class="bg-white border border-border rounded-xl p-3 text-center">
+      <span class="material-symbols-outlined text-primary">local_shipping</span>
+      <p class="text-2xl font-extrabold text-ink mt-1">4</p><p class="text-xs text-muted">قيد الشحن</p>
+    </a>
+    <a href="10-shipments.html" class="bg-white border border-border rounded-xl p-3 text-center">
+      <span class="material-symbols-outlined text-warn">inventory_2</span>
+      <p class="text-2xl font-extrabold text-ink mt-1">2</p><p class="text-xs text-muted">جاهزة للاستلام</p>
+    </a>
+    <a href="10-shipments.html" class="bg-white border border-border rounded-xl p-3 text-center">
+      <span class="material-symbols-outlined text-ok">check_circle</span>
+      <p class="text-2xl font-extrabold text-ink mt-1">18</p><p class="text-xs text-muted">تم التسليم</p>
+    </a>
+  </section>
+
+  <!-- ready alert -->
+  <a href="11-shipment-detail.html" class="flex items-center gap-3 bg-warn/10 border border-warn/30 rounded-xl p-4">
+    <span class="material-symbols-outlined text-warn text-3xl">package_2</span>
+    <div class="flex-1">
+      <p class="font-bold text-ink text-sm">لديك شحنتان جاهزتان للاستلام</p>
+      <p class="text-xs text-muted">في مخزن طرابلس الرئيسي</p>
+    </div>
+    <span class="text-warn font-bold text-sm">عرض ‹</span>
+  </a>
+
+  <!-- quick actions -->
+  <section>
+    <h3 class="font-bold text-ink mb-3">إجراءات سريعة</h3>
+    <div class="grid grid-cols-3 gap-3">
+      <a href="12-china-address.html" class="bg-white border border-border rounded-xl p-4 text-center">
+        <span class="material-symbols-outlined text-primary text-3xl">warehouse</span>
+        <p class="text-xs font-semibold text-ink mt-2">عنوان مخزن الصين</p>
+      </a>
+      <a href="03-pre-alert.html" class="bg-white border border-border rounded-xl p-4 text-center">
+        <span class="material-symbols-outlined text-primary text-3xl">add_alert</span>
+        <p class="text-xs font-semibold text-ink mt-2">تنبيه بشحنة قادمة</p>
+      </a>
+      <a href="10-shipments.html" class="bg-white border border-border rounded-xl p-4 text-center">
+        <span class="material-symbols-outlined text-primary text-3xl">inventory</span>
+        <p class="text-xs font-semibold text-ink mt-2">شحناتي</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- recent notifications -->
+  <section>
+    <h3 class="font-bold text-ink mb-3">آخر الإشعارات</h3>
+    <div class="bg-white border border-border rounded-xl divide-y divide-border">
+      <div class="flex items-center gap-3 p-3">
+        <span class="material-symbols-outlined text-primary">flight_land</span>
+        <div class="flex-1"><p class="text-sm font-semibold text-ink">وصلت رحلتك FL-1203 إلى طرابلس</p><p class="text-xs text-muted">منذ ساعتين</p></div>
+      </div>
+      <div class="flex items-center gap-3 p-3">
+        <span class="material-symbols-outlined text-ok">local_shipping</span>
+        <div class="flex-1"><p class="text-sm font-semibold text-ink">تم تحديث حالة الشحنة SH-2026-0457</p><p class="text-xs text-muted">أمس</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- bottom nav -->
+<nav class="fixed bottom-0 inset-x-0 bg-white border-t border-border flex justify-around py-2 z-30">
+  <a href="09-dashboard.html" class="nav-a active flex flex-col items-center text-xs font-semibold"><span class="material-symbols-outlined">home</span>الرئيسية</a>
+  <a href="10-shipments.html" class="nav-a flex flex-col items-center text-xs font-semibold"><span class="material-symbols-outlined">package_2</span>شحناتي</a>
+  <a href="13-wallet.html" class="nav-a flex flex-col items-center text-xs font-semibold"><span class="material-symbols-outlined">account_balance_wallet</span>المحفظة</a>
+  <a href="04-my-requests.html" class="nav-a flex flex-col items-center text-xs font-semibold"><span class="material-symbols-outlined">notifications</span>الإشعارات</a>
+  <a href="17-profile.html" class="nav-a flex flex-col items-center text-xs font-semibold"><span class="material-symbols-outlined">person</span>حسابي</a>
+</nav>
+<script src="../nav.js"></script>
+</body>
+</html>

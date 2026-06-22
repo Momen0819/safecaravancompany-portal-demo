@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تفاصيل الشحنة - القافلة الآمنة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet" />
+<script>tailwind.config={theme:{extend:{colors:{primary:'#1f5aa8',light:'#e8f1fb',ink:'#14233a',muted:'#5b6b80',border:'#cdddee',ok:'#13a05a',danger:'#d64550',warn:'#e8920a'},fontFamily:{sans:['Noto Sans Arabic','sans-serif']}}}};</script>
+<style>body{font-family:'Noto Sans Arabic',sans-serif;background:#f6f9fc;color:#14233a}.material-symbols-outlined{vertical-align:middle}</style>
+</head>
+<body class="pb-10">
+<header class="bg-white border-b border-border px-3 py-3 flex items-center justify-between sticky top-0 z-30">
+  <a href="10-shipments.html" class="w-10 h-10 grid place-items-center rounded-full hover:bg-light"><span class="material-symbols-outlined">arrow_forward</span></a>
+  <h1 class="font-bold text-lg">تفاصيل الشحنة</h1>
+  <button class="w-10 h-10 grid place-items-center rounded-full hover:bg-light"><span class="material-symbols-outlined">share</span></button>
+</header>
+
+<main class="p-4 space-y-4">
+  <div class="bg-white border border-border rounded-xl p-4 flex items-center justify-between">
+    <div><p class="text-xs text-muted">رقم الشحنة</p><p class="font-extrabold text-xl text-ink">SH-2026-0457</p></div>
+    <span class="text-xs bg-warn/15 text-warn font-bold px-3 py-1.5 rounded-full">في المخزن — جاهزة</span>
+  </div>
+
+  <!-- timeline -->
+  <div class="bg-white border border-border rounded-xl p-4">
+    <h3 class="font-bold text-ink mb-4">تتبّع الشحنة</h3>
+    <ol class="relative border-r-2 border-border pr-5 space-y-5">
+      <li class="relative"><span class="absolute -right-[27px] top-0 w-4 h-4 rounded-full bg-ok ring-4 ring-ok/20"></span><p class="font-semibold text-sm text-ink">قيد الشحن — مخزن قوانزو</p><p class="text-xs text-muted">1 يونيو 2026</p></li>
+      <li class="relative"><span class="absolute -right-[27px] top-0 w-4 h-4 rounded-full bg-ok ring-4 ring-ok/20"></span><p class="font-semibold text-sm text-ink">تم الشحن — رحلة FL-1203</p><p class="text-xs text-muted">5 يونيو 2026</p></li>
+      <li class="relative"><span class="absolute -right-[27px] top-0 w-4 h-4 rounded-full bg-warn ring-4 ring-warn/25 animate-pulse"></span><p class="font-semibold text-sm text-ink">وصلت مخزن طرابلس</p><p class="text-xs text-muted">9 يونيو 2026 — الحالة الحالية</p></li>
+      <li class="relative"><span class="absolute -right-[27px] top-0 w-4 h-4 rounded-full bg-border"></span><p class="font-semibold text-sm text-muted">تم التسليم</p></li>
+    </ol>
+  </div>
+
+  <!-- details -->
+  <div class="bg-white border border-border rounded-xl p-4 space-y-2 text-sm">
+    <h3 class="font-bold text-ink mb-1">بيانات الشحنة</h3>
+    <div class="flex justify-between"><span class="text-muted">الفئة</span><span class="font-semibold">إلكترونيات</span></div>
+    <div class="flex justify-between"><span class="text-muted">رقم التتبع</span><span class="font-semibold">YT74829301</span></div>
+    <div class="flex justify-between"><span class="text-muted">عدد الصناديق</span><span class="font-semibold">3</span></div>
+    <div class="flex justify-between"><span class="text-muted">الوزن الفعلي</span><span class="font-semibold">12.5 كجم</span></div>
+    <div class="flex justify-between"><span class="text-muted">الأبعاد / الحجمي</span><span class="font-semibold">40×30×25 — 5 كجم</span></div>
+  </div>
+
+  <!-- cost -->
+  <div class="bg-light border border-border rounded-xl p-4 flex justify-between items-center">
+    <div><p class="text-xs text-muted">التكلفة الإجمالية</p><p class="font-extrabold text-lg text-ink">85.00 $</p></div>
+    <div class="text-left"><p class="text-xs text-muted">المتبقي عليك</p><p class="font-extrabold text-lg text-ok">0.00 $</p></div>
+  </div>
+
+  <!-- ready for pickup -->
+  <div class="bg-white border-2 border-warn/40 rounded-xl p-4">
+    <p class="font-bold text-warn flex items-center gap-2"><span class="material-symbols-outlined">inventory_2</span> جاهزة للاستلام</p>
+    <p class="text-sm font-semibold text-ink mt-2">مخزن طرابلس الرئيسي</p>
+    <p class="text-xs text-muted">شارع الجمهورية، طرابلس · 091 000 0000</p>
+    <div class="flex gap-2 mt-3">
+      <button class="flex-1 bg-primary text-white rounded-xl py-2.5 text-sm font-bold">نسخ العنوان</button>
+      <button class="flex-1 border border-border rounded-xl py-2.5 text-sm font-bold text-ink">اتصال</button>
+      <button class="flex-1 border border-border rounded-xl py-2.5 text-sm font-bold text-ink">واتساب</button>
+    </div>
+  </div>
+
+  <!-- images -->
+  <div class="grid grid-cols-3 gap-2">
+    <div class="aspect-square bg-light rounded-xl grid place-items-center text-muted"><span class="material-symbols-outlined">image</span></div>
+    <div class="aspect-square bg-light rounded-xl grid place-items-center text-muted"><span class="material-symbols-outlined">image</span></div>
+    <div class="aspect-square bg-light rounded-xl grid place-items-center text-muted"><span class="material-symbols-outlined">image</span></div>
+  </div>
+
+  <div class="flex gap-2">
+    <button class="flex-1 bg-primary text-white rounded-xl py-3 font-bold flex items-center justify-center gap-2"><span class="material-symbols-outlined">picture_as_pdf</span>تحميل الفاتورة PDF</button>
+    <button class="flex-1 border border-danger text-danger rounded-xl py-3 font-bold">الإبلاغ عن مشكلة</button>
+  </div>
+</main>
+<script src="../nav.js"></script>
+</body>
+</html>

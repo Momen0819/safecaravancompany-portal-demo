@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ربط الحساب - القافلة الآمنة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet" />
+<script>tailwind.config={theme:{extend:{colors:{primary:'#1f5aa8',light:'#e8f1fb',ink:'#14233a',muted:'#5b6b80',border:'#cdddee',ok:'#13a05a',danger:'#d64550',warn:'#e8920a'},fontFamily:{sans:['Noto Sans Arabic','sans-serif']}}}};</script>
+<style>body{font-family:'Noto Sans Arabic',sans-serif;background:#f6f9fc;color:#14233a}.material-symbols-outlined{vertical-align:middle}</style>
+</head>
+<body class="pb-10">
+<header class="bg-white border-b border-border px-3 py-3 flex items-center gap-2 sticky top-0 z-30">
+  <a href="09-dashboard.html" class="w-10 h-10 grid place-items-center rounded-full hover:bg-light"><span class="material-symbols-outlined">arrow_forward</span></a>
+  <h1 class="font-bold text-lg">ربط الحساب</h1>
+</header>
+
+<main class="p-4 space-y-4">
+  <div class="bg-warn/10 border border-warn/30 rounded-xl p-4 flex gap-3">
+    <span class="material-symbols-outlined text-warn">warning</span>
+    <p class="text-sm text-ink">حسابك غير مربوط بسجل عميل لدينا، لذلك لا تظهر شحناتك. اربط حسابك الآن.</p>
+  </div>
+
+  <div class="bg-white border border-border rounded-xl p-4">
+    <p class="font-bold text-ink mb-1">١) أدخل كود العميل</p>
+    <p class="text-xs text-muted mb-3">تجده على أي إيصال أو كشف حساب</p>
+    <div class="flex items-center border border-border rounded-xl bg-white px-3 h-12 mb-3">
+      <span class="material-symbols-outlined text-muted">qr_code_2</span>
+      <input class="w-full bg-transparent border-0 focus:ring-0 text-sm" placeholder="QF____" />
+    </div>
+    <button class="w-full bg-primary text-white rounded-xl py-3 font-bold">تحقّق واربط</button>
+  </div>
+
+  <div class="relative text-center my-1"><span class="bg-surface px-3 text-muted text-xs relative z-10">أو</span><div class="absolute inset-x-0 top-1/2 border-t border-border"></div></div>
+
+  <div class="bg-white border border-border rounded-xl p-4">
+    <p class="font-bold text-ink mb-1">٢) تأكيد عبر واتساب</p>
+    <p class="text-xs text-muted mb-3">سنرسل رمزاً إلى رقم هاتفك المسجّل لدينا</p>
+    <button class="w-full bg-ok text-white rounded-xl py-3 font-bold flex items-center justify-center gap-2"><span class="material-symbols-outlined">chat</span>إرسال رمز التحقق عبر واتساب</button>
+  </div>
+
+  <div class="flex items-center justify-between bg-white border border-border rounded-xl p-4">
+    <span class="text-sm text-muted">الحالة</span>
+    <span class="text-xs bg-danger/10 text-danger font-bold px-3 py-1 rounded-full">غير مربوط</span>
+  </div>
+
+  <p class="text-center text-sm text-muted">تواجه مشكلة؟ <a href="18-contact.html" class="text-primary font-semibold">تواصل مع الإدارة</a></p>
+</main>
+<script src="../nav.js"></script>
+</body>
+</html>

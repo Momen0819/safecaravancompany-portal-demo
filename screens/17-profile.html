@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>حسابي - القافلة الآمنة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet" />
+<script>tailwind.config={theme:{extend:{colors:{primary:'#1f5aa8',light:'#e8f1fb',ink:'#14233a',muted:'#5b6b80',border:'#cdddee',danger:'#d64550'},fontFamily:{sans:['Noto Sans Arabic','sans-serif']}}}};</script>
+<style>body{font-family:'Noto Sans Arabic',sans-serif;background:#f6f9fc;color:#14233a}.material-symbols-outlined{vertical-align:middle}.nav-a{color:#5b6b80}.nav-a.active{color:#1f5aa8}.item{display:flex;align-items:center;gap:12px;padding:14px;border-bottom:1px solid #eef3f8}</style>
+</head>
+<body class="pb-24">
+<header class="bg-white border-b border-border px-4 py-3 sticky top-0 z-30"><h1 class="font-bold text-lg">حسابي</h1></header>
+
+<main class="p-4 space-y-4">
+  <div class="bg-white border border-border rounded-xl p-4 flex items-center gap-4">
+    <div class="w-16 h-16 rounded-full bg-light grid place-items-center"><span class="material-symbols-outlined text-primary text-3xl">person</span></div>
+    <div><p class="font-bold text-lg">أحمد محمد</p><span class="text-xs bg-light text-primary font-semibold px-2 py-0.5 rounded-full">QF1163</span> <span class="text-xs bg-primary/10 text-primary font-semibold px-2 py-0.5 rounded-full">عميل مميّز</span></div>
+  </div>
+
+  <div class="bg-white border border-border rounded-xl p-4 space-y-3">
+    <h3 class="font-bold text-ink">بياناتي</h3>
+    <div class="flex items-center justify-between"><div><p class="text-xs text-muted">الاسم الكامل</p><p class="font-semibold text-sm">أحمد محمد</p></div><span class="material-symbols-outlined text-muted">edit</span></div>
+    <div class="flex items-center justify-between"><div><p class="text-xs text-muted">رقم الهاتف</p><p class="font-semibold text-sm" dir="ltr">+218 91 234 5678</p></div><span class="material-symbols-outlined text-muted">edit</span></div>
+    <div class="flex items-center justify-between"><div><p class="text-xs text-muted">البريد الإلكتروني</p><p class="font-semibold text-sm" dir="ltr">ahmed@example.com</p></div><span class="material-symbols-outlined text-muted">edit</span></div>
+  </div>
+
+  <div class="bg-light/60 border border-border rounded-xl p-4 grid grid-cols-3 gap-2 text-center text-xs">
+    <div><p class="text-muted">المدينة</p><p class="font-semibold">طرابلس</p></div>
+    <div><p class="text-muted">المجال</p><p class="font-semibold">تجارة</p></div>
+    <div><p class="text-muted">الانضمام</p><p class="font-semibold">يناير 2026</p></div>
+  </div>
+
+  <div class="bg-white border border-border rounded-xl overflow-hidden">
+    <a href="07-security.html" class="item"><span class="material-symbols-outlined text-primary">lock</span><span class="flex-1 font-semibold text-sm">الأمان وكلمة المرور</span><span class="material-symbols-outlined text-muted">chevron_left</span></a>
+    <a href="04-my-requests.html" class="item"><span class="material-symbols-outlined text-primary">notifications</span><span class="flex-1 font-semibold text-sm">الإشعارات</span><span class="material-symbols-outlined text-muted">chevron_left</span></a>
+    <a href="08-faq.html" class="item"><span class="material-symbols-outlined text-primary">help</span><span class="flex-1 font-semibold text-sm">المساعدة والأسئلة الشائعة</span><span class="material-symbols-outlined text-muted">chevron_left</span></a>
+    <a href="18-contact.html" class="item" style="border-bottom:0"><span class="material-symbols-outlined text-primary">support_agent</span><span class="flex-1 font-semibold text-sm">تواصل والدعم</span><span class="material-symbols-outlined text-muted">chevron_left</span></a>
+  </div>
+
+  <button class="w-full bg-primary text-white rounded-xl py-3 font-bold">حفظ التغييرات</button>
+  <button class="w-full border border-danger text-danger rounded-xl py-3 font-bold flex items-center justify-center gap-2"><span class="material-symbols-outlined">logout</span>تسجيل الخروج</button>
+</main>
+
+<nav class="fixed bottom-0 inset-x-0 bg-white border-t border-border flex justify-around py-2 z-30">
+  <a href="09-dashboard.html" class="nav-a flex flex-col items-center text-xs font-semibold"><span class="material-symbols-outlined">home</span>الرئيسية</a>
+  <a href="10-shipments.html" class="nav-a flex flex-col items-center text-xs font-semibold"><span class="material-symbols-outlined">package_2</span>شحناتي</a>
+  <a href="13-wallet.html" class="nav-a flex flex-col items-center text-xs font-semibold"><span class="material-symbols-outlined">account_balance_wallet</span>المحفظة</a>
+  <a href="04-my-requests.html" class="nav-a flex flex-col items-center text-xs font-semibold"><span class="material-symbols-outlined">notifications</span>الإشعارات</a>
+  <a href="17-profile.html" class="nav-a active flex flex-col items-center text-xs font-semibold"><span class="material-symbols-outlined">person</span>حسابي</a>
+</nav>
+<script src="../nav.js"></script>
+</body>
+</html>

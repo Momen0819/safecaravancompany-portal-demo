@@ -43,11 +43,13 @@
   }
 
   var NAV = [
-    ['الرئيسية', '04-my-requests.html'], ['شحناتي', '04-my-requests.html'],
-    ['المحفظة', '05-wallet-payments.html'], ['الإشعارات', '04-my-requests.html'],
-    ['حسابي', '07-security.html'], ['تواصل مع الدعم', '08-faq.html'],
+    ['الرئيسية', '09-dashboard.html'], ['شحناتي', '10-shipments.html'],
+    ['المحفظة', '13-wallet.html'], ['الإشعارات', '04-my-requests.html'],
+    ['حسابي', '17-profile.html'], ['تواصل مع الدعم', '18-contact.html'],
     ['الشروط', '08-faq.html'], ['الخصوصية', '08-faq.html'],
-    ['طلب جديد', '03-pre-alert.html'], ['كشف الحساب', '06-account-statement.html']
+    ['طلب جديد', '03-pre-alert.html'], ['كشف الحساب', '06-account-statement.html'],
+    ['عنوان مخزن الصين', '12-china-address.html'], ['عرض الشحنة', '11-shipment-detail.html'],
+    ['المصروفات', '16-charges.html']
   ];
 
   function block(e) { e.preventDefault(); e.stopPropagation(); }
@@ -84,13 +86,13 @@
       return;
     }
     // login -> enter app
-    if (/(^|\s)دخول(\s|$)/.test(raw) && !/تسجيل الدخول/.test(raw)) { block(e); loadingThen('جاري تسجيل الدخول…', '04-my-requests.html'); return; }
+    if (/(^|\s)دخول(\s|$)/.test(raw) && !/تسجيل الدخول/.test(raw)) { block(e); loadingThen('جاري تسجيل الدخول…', '09-dashboard.html'); return; }
     // register -> create account (needs terms)
     if (/إنشاء الحساب/.test(L)) {
       block(e);
       var terms = document.getElementById('terms');
       if (terms && !terms.checked) { toast('warning', 'يجب الموافقة على الشروط أولاً'); return; }
-      loadingThen('جاري إنشاء الحساب…', '04-my-requests.html'); return;
+      loadingThen('جاري إنشاء الحساب…', '09-dashboard.html'); return;
     }
     // pre-alert -> success then go to requests
     if (/إرسال التنبيه/.test(L)) {
