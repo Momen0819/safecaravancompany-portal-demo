@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تتبّع الشحنة - القافلة الآمنة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet" />
+<script>tailwind.config={theme:{extend:{colors:{primary:'#1f5aa8',primaryd:'#16447f',light:'#e8f1fb',ink:'#14233a',muted:'#5b6b80',border:'#cdddee',ok:'#13a05a',warn:'#e8920a',danger:'#d64550'},fontFamily:{sans:['Noto Sans Arabic','sans-serif']}}}};</script>
+<style>
+  :root{--primary:#1f5aa8;--ok:#13a05a;--warn:#e8920a;--ink:#14233a;--muted:#5b6b80;}
+  *{box-sizing:border-box}
+  body{font-family:'Noto Sans Arabic',sans-serif;background:#f6f9fc;color:#14233a;-webkit-font-smoothing:antialiased}
+  .material-symbols-outlined{vertical-align:middle}
+
+  /* ---------- entrance ---------- */
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  .rise{opacity:0;animation:rise .6s cubic-bezier(.22,1,.36,1) forwards}
+
+  /* ---------- hero atmosphere ---------- */
+  .hero{position:relative;overflow:hidden;background:linear-gradient(155deg,#0d1b2e 0%,#16447f 60%,#1f5aa8 100%)}
+  .hero .aurora{position:absolute;border-radius:50%;filter:blur(48px);opacity:.55;pointer-events:none;animation:drift 9s ease-in-out infinite}
+  .a1{width:260px;height:260px;background:#2f7fd6;top:-90px;left:-60px}
+  .a2{width:220px;height:220px;background:#0fb6a8;bottom:-80px;right:-40px;animation-delay:-4s}
+  @keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(20px,-18px) scale(1.12)}}
+  .grain{position:absolute;inset:0;opacity:.06;pointer-events:none;
+    background-image:radial-gradient(circle at 1px 1px,#fff 1px,transparent 0);background-size:5px 5px}
+
+  /* ---------- live pill ---------- */
+  .livedot{width:8px;height:8px;border-radius:50%;background:#22e06b;box-shadow:0 0 0 0 rgba(34,224,107,.7);animation:ping 1.6s ease-out infinite}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(34,224,107,.7)}70%{box-shadow:0 0 0 10px rgba(34,224,107,0)}100%{box-shadow:0 0 0 0 rgba(34,224,107,0)}}
+
+  /* ---------- route map ---------- */
+  .route{position:relative;height:96px;margin:6px 4px 0}
+  .track{position:absolute;top:50px;left:6%;right:6%;height:4px;border-radius:99px;
+    background:repeating-linear-gradient(90deg,rgba(255,255,255,.35) 0 7px,transparent 7px 15px)}
+  .track-fill{position:absolute;top:50px;right:6%;height:4px;border-radius:99px;width:6%;
+    background:linear-gradient(90deg,#22e06b,#37c6ff);box-shadow:0 0 12px rgba(55,198,255,.7);
+    animation:fill 2.2s cubic-bezier(.65,0,.35,1) .3s forwards}
+  @keyframes fill{to{width:54%}}
+  .node{position:absolute;top:38px;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+    font-size:14px;border:2px solid rgba(255,255,255,.8);background:rgba(255,255,255,.12);color:#fff;backdrop-filter:blur(4px)}
+  .node.start{right:3%}.node.end{left:3%}
+  .node.end{border-style:dashed;opacity:.7}
+  .lbl{position:absolute;top:72px;font-size:11px;font-weight:700;color:rgba(255,255,255,.85)}
+  .lbl.start{right:1%}.lbl.end{left:1%}
+  .plane{position:absolute;top:30px;right:5%;font-size:22px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.35));
+    animation:fly 2.2s cubic-bezier(.65,0,.35,1) .3s forwards, bob 3.2s ease-in-out 2.5s infinite;z-index:3}
+  @keyframes fly{to{right:51%}}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-5px) rotate(-6deg)}}
+  .pct{position:absolute;top:4px;right:44%;font-size:12px;font-weight:800;color:#fff;background:rgba(255,255,255,.14);
+    padding:2px 9px;border-radius:99px;border:1px solid rgba(255,255,255,.2);animation:rise .6s 1.6s both}
+
+  /* ---------- timeline ---------- */
+  .tl{position:relative;padding-right:34px}
+  .tl-line{position:absolute;top:8px;bottom:18px;right:13px;width:3px;background:#e3e9f1;border-radius:99px;overflow:hidden}
+  .tl-line::after{content:"";position:absolute;top:0;right:0;width:100%;height:0;border-radius:99px;
+    background:linear-gradient(#13a05a,#1f5aa8);animation:grow 1.5s ease-out .6s forwards}
+  @keyframes grow{to{height:62%}}
+  .tl-item{position:relative;padding-bottom:22px}
+  .dot{position:absolute;right:-28px;top:2px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;
+    font-size:15px;background:#fff;border:3px solid #e3e9f1;color:#9aa7b8;z-index:2}
+  .dot.done{background:#13a05a;border-color:#13a05a;color:#fff}
+  .dot.now{background:#fff;border-color:#e8920a;color:#e8920a}
+  .dot.now::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid #e8920a;opacity:.5;animation:pulse 1.8s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(.85);opacity:.6}100%{transform:scale(1.6);opacity:0}}
+
+  .chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px}
+  .pkg{transition:transform .2s}.pkg:active{transform:scale(.97)}
+  .shine{background-size:200% 100%;animation:shine 2.4s linear infinite;
+    background-image:linear-gradient(90deg,#1f5aa8,#16447f,#1f5aa8)}
+  @keyframes shine{to{background-position:-200% 0}}
+</style>
+</head>
+<body class="pb-10">
+
+<!-- header -->
+<header class="hero text-white">
+  <div class="aurora a1"></div><div class="aurora a2"></div><div class="grain"></div>
+  <div class="relative px-4 pt-3 pb-6">
+    <div class="flex items-center justify-between">
+      <a href="11-shipment-detail.html" class="w-10 h-10 grid place-items-center rounded-full hover:bg-white/10">
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+      <div class="flex items-center gap-1.5 text-xs font-bold bg-white/10 border border-white/15 px-3 py-1.5 rounded-full rise" style="animation-delay:.05s">
+        <span class="livedot"></span> تتبُّع مباشر
+      </div>
+      <button class="w-10 h-10 grid place-items-center rounded-full hover:bg-white/10"><span class="material-symbols-outlined">ios_share</span></button>
+    </div>
+
+    <div class="mt-3 rise" style="animation-delay:.1s">
+      <p class="text-white/60 text-xs font-semibold tracking-wide">رقم الشحنة</p>
+      <div class="flex items-center gap-2">
+        <h1 class="text-2xl font-900 font-extrabold tracking-tight">SH-2026-0457</h1>
+        <span class="chip bg-warn/20 text-warn border border-warn/30" style="color:#ffd27a">
+          <span class="material-symbols-outlined" style="font-size:15px">flight</span> في الطريق
+        </span>
+      </div>
+    </div>
+
+    <!-- animated route -->
+    <div class="route rise" style="animation-delay:.15s">
+      <div class="track"></div>
+      <div class="track-fill"></div>
+      <div class="node start">🇨🇳</div>
+      <div class="node end">🇱🇾</div>
+      <span class="plane">✈️</span>
+      <span class="pct">٪54</span>
+      <span class="lbl start">قوانزو</span>
+      <span class="lbl end">طرابلس</span>
+    </div>
+
+    <!-- ETA -->
+    <div class="mt-5 grid grid-cols-3 gap-2 rise" style="animation-delay:.25s">
+      <div class="bg-white/10 border border-white/10 rounded-xl p-2.5 text-center">
+        <p class="text-white/55 text-[10px] font-bold">الوصول المتوقّع</p>
+        <p class="text-base font-extrabold mt-0.5">٣ أيام</p>
+      </div>
+      <div class="bg-white/10 border border-white/10 rounded-xl p-2.5 text-center">
+        <p class="text-white/55 text-[10px] font-bold">الرحلة</p>
+        <p class="text-base font-extrabold mt-0.5">FL-1203</p>
+      </div>
+      <div class="bg-white/10 border border-white/10 rounded-xl p-2.5 text-center">
+        <p class="text-white/55 text-[10px] font-bold">الوزن</p>
+        <p class="text-base font-extrabold mt-0.5">12.5kg</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="p-4 -mt-3 relative space-y-4">
+
+  <!-- timeline card -->
+  <section class="bg-white border border-border rounded-2xl p-5 shadow-sm rise" style="animation-delay:.3s">
+    <h3 class="font-extrabold text-ink mb-4 flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">conveyor_belt</span> مراحل الشحنة
+    </h3>
+    <div class="tl">
+      <div class="tl-line"></div>
+
+      <div class="tl-item rise" style="animation-delay:.5s">
+        <div class="dot done"><span class="material-symbols-outlined" style="font-size:16px">check</span></div>
+        <p class="font-bold text-sm text-ink">تم الاستلام في مخزن الصين</p>
+        <p class="text-xs text-muted mt-0.5">قوانزو · 1 يونيو 2026 — 09:14</p>
+      </div>
+
+      <div class="tl-item rise" style="animation-delay:.65s">
+        <div class="dot done"><span class="material-symbols-outlined" style="font-size:16px">check</span></div>
+        <p class="font-bold text-sm text-ink">تم الشحن على الرحلة FL-1203</p>
+        <p class="text-xs text-muted mt-0.5">5 يونيو 2026 — 22:40</p>
+      </div>
+
+      <div class="tl-item rise" style="animation-delay:.8s">
+        <div class="dot now"><span class="material-symbols-outlined" style="font-size:15px">flight</span></div>
+        <p class="font-bold text-sm text-primary">في الطريق إلى مخزن ليبيا</p>
+        <p class="text-xs text-muted mt-0.5">المرحلة الحالية · يتم تحديث الموقع تلقائياً</p>
+        <div class="mt-2 inline-flex items-center gap-1.5 chip bg-light text-primary">
+          <span class="material-symbols-outlined" style="font-size:14px">schedule</span> متبقٍّ ~٣ أيام
+        </div>
+      </div>
+
+      <div class="tl-item rise" style="animation-delay:.95s">
+        <div class="dot"><span class="material-symbols-outlined" style="font-size:15px">inventory_2</span></div>
+        <p class="font-bold text-sm text-muted">جاهزة للاستلام في طرابلس</p>
+        <p class="text-xs text-muted/70 mt-0.5">بانتظار الوصول</p>
+      </div>
+
+      <div class="tl-item rise" style="animation-delay:1.1s;padding-bottom:0">
+        <div class="dot"><span class="material-symbols-outlined" style="font-size:15px">task_alt</span></div>
+        <p class="font-bold text-sm text-muted">تم التسليم</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- package details -->
+  <section class="grid grid-cols-2 gap-3 rise" style="animation-delay:.4s">
+    <div class="pkg bg-white border border-border rounded-2xl p-4">
+      <span class="material-symbols-outlined text-primary">category</span>
+      <p class="text-xs text-muted mt-1">الفئة</p><p class="font-bold text-ink">إلكترونيات</p>
+    </div>
+    <div class="pkg bg-white border border-border rounded-2xl p-4">
+      <span class="material-symbols-outlined text-primary">inventory</span>
+      <p class="text-xs text-muted mt-1">عدد الصناديق</p><p class="font-bold text-ink">3 صناديق</p>
+    </div>
+    <div class="pkg bg-white border border-border rounded-2xl p-4">
+      <span class="material-symbols-outlined text-primary">qr_code_2</span>
+      <p class="text-xs text-muted mt-1">رقم التتبع</p><p class="font-bold text-ink" dir="ltr">YT74829301</p>
+    </div>
+    <div class="pkg bg-white border border-border rounded-2xl p-4">
+      <span class="material-symbols-outlined text-ok">payments</span>
+      <p class="text-xs text-muted mt-1">التكلفة</p><p class="font-bold text-ink">85.00 $</p>
+    </div>
+  </section>
+
+  <!-- pickup CTA -->
+  <section class="rise" style="animation-delay:.5s">
+    <button class="shine w-full text-white font-extrabold py-4 rounded-2xl flex items-center justify-center gap-2 shadow-lg shadow-primary/25">
+      <span class="material-symbols-outlined">notifications_active</span> نبّهني عند الوصول
+    </button>
+    <a href="12-china-address.html" class="mt-2 w-full bg-white border border-border text-primary font-bold py-3.5 rounded-2xl flex items-center justify-center gap-2">
+      <span class="material-symbols-outlined">location_on</span> عنوان مخزن الاستلام
+    </a>
+  </section>
+
+</main>
+<script src="../nav.js"></script>
+</body>
+</html>
